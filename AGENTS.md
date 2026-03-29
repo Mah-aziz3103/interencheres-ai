@@ -1,46 +1,36 @@
-\# AGENTS.md
+# AGENTS.md
 
+## Objectif du projet
 
+Ce projet analyse des lots Interencheres via plusieurs agents specialises et produit des rapports structures.
 
-\## Objectif du projet
+## Architecture multi-agents
 
-Ce projet sert à analyser des lots Interencheres et à produire des rapports structurés.
+- `lot-analyst` lit `docs/inbox/lots-to-analyze.md` et ecrit `docs/reports/lot-analysis.md`.
+- `risk-analyst` lit `docs/inbox/lots-to-analyze.md` et ecrit `docs/reports/risk-review.md`.
+- `decision-agent` lit `docs/reports/lot-analysis.md` et `docs/reports/risk-review.md` puis ecrit `docs/reports/daily-summary.md`.
 
+## Regles de travail
 
+- Toujours lire les fichiers d'entree requis avant de produire un rapport.
+- Ecrire les resultats uniquement dans `docs/reports/` ou `docs/state/`.
+- Ne jamais inventer une information manquante.
+- Utiliser `INCERTAIN` si une information manque, ne peut pas etre verifiee, ou reste ambigue.
+- Preferer des sorties structurees avec titres, sous-titres, listes courtes et conclusions.
+- Garder les modifications limitees a la tache demandee.
 
-\## Règles de travail
-
-\- Toujours lire les fichiers dans docs/inbox/ avant de produire un rapport.
-
-\- Écrire les résultats uniquement dans docs/reports/ ou docs/state/.
-
-\- Ne jamais inventer une information manquante ; écrire INCERTAIN si nécessaire.
-
-\- Préférer des sorties structurées avec titres, sous-titres, listes courtes et conclusions.
-
-\- Garder les modifications limitées à la tâche demandée.
-
-
-
-\## Format de sortie attendu
+## Format de sortie attendu
 
 Chaque rapport doit contenir :
 
-1\. Résumé
+1. Resume
+2. Analyse
+3. Risques
+4. Recommandation
+5. Prochaine action
 
-2\. Analyse
+## Contraintes
 
-3\. Risques
-
-4\. Recommandation
-
-5\. Prochaine action
-
-
-
-\## Contraintes
-
-\- Ne pas supprimer de fichiers existants sans raison explicite.
-
-\- Ne pas modifier le code applicatif si la tâche concerne seulement l’analyse documentaire.
-
+- Ne pas supprimer de fichiers existants sans raison explicite.
+- Ne pas modifier le code applicatif si la tache concerne seulement l'analyse documentaire.
+- Ne modifier aucun autre fichier quand la demande porte uniquement sur `AGENTS.md`.
