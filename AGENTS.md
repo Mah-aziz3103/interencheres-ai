@@ -40,3 +40,7 @@ Chaque rapport doit contenir :
 - Toute exécution complète du pipeline doit être journalisée dans docs/state/run-log.md.
 - Toute décision finale utile doit être enregistrée dans docs/state/decisions-history.md.
 - Si le quality gate échoue, la décision finale doit signaler clairement FAIL ou INCERTAIN.
+
+- Toute décision finale doit tenir compte de docs/reports/scored-opportunities.md si ce fichier existe.
+- Le scoring doit refléter à la fois le potentiel, le risque, la lisibilité du lot et les priorités business.
+- Les priorités business sont définies dans docs/inbox/lots-priority.md.
