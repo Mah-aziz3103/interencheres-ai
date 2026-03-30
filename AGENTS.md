@@ -34,3 +34,9 @@ Chaque rapport doit contenir :
 - Ne pas supprimer de fichiers existants sans raison explicite.
 - Ne pas modifier le code applicatif si la tache concerne seulement l'analyse documentaire.
 - Ne modifier aucun autre fichier quand la demande porte uniquement sur `AGENTS.md`.
+
+## Règles d'exploitation
+- Toute synthèse finale doit tenir compte de docs/state/quality-gate.md si ce fichier existe.
+- Toute exécution complète du pipeline doit être journalisée dans docs/state/run-log.md.
+- Toute décision finale utile doit être enregistrée dans docs/state/decisions-history.md.
+- Si le quality gate échoue, la décision finale doit signaler clairement FAIL ou INCERTAIN.
